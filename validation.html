@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            display: inline-block;
+            border-radius: 5px;
+        }
+        form{
+            margin-left: 550px;
+            margin-top: 200px;
+            z-index: 2;
+            position: absolute;
+            bottom: 220px;
+            
+        }
+        #img{
+            background-size: cover;
+            z-index: -1;
+        }
+    </style>
+ 
+</head>
+<body>
+    <img src="asset/pexels-eberhard-grossgasteiger-691668.jpg" id="img" height="700px" width="1500px">
+    <form action="" method="post">
+        <fieldset>
+        
+        name:<br><input type="text" required>
+        <br><br>
+        
+        password:<br><input type="password" required>
+            <br><br>
+      email:<br><input type="email" required>    <br><br>
+        mobile:<br><input type="number" required>    <br><br>
+        <input type="button" value="submit">
+    </fieldset>
+    </form>
+
+</body>
+</html>
