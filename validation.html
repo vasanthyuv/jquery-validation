@@ -1,45 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
     <style>
-        fieldset{
+        fieldset {
             display: inline-block;
             border-radius: 5px;
+            box-shadow: 2px 2px 2px 3px black;
         }
-        form{
+
+        form {
             margin-left: 550px;
             margin-top: 200px;
             z-index: 2;
             position: absolute;
             bottom: 220px;
-            
+
+
         }
-        #img{
+
+        #img {
             background-size: cover;
             z-index: -1;
         }
+
+        #button {
+            margin-left: 53px;
+        }
+
+        form.error {
+            color: #ff0001;
+        }
     </style>
- 
+
 </head>
+
 <body>
     <img src="asset/pexels-eberhard-grossgasteiger-691668.jpg" id="img" height="700px" width="1500px">
-    <form action="" method="post">
+    <form action="" method="get" id="form" name="formdetail">
         <fieldset>
-        
-        name:<br><input type="text" required>
-        <br><br>
-        
-        password:<br><input type="password" required>
+
+            name:<br><input type="text" name="uname" id="uname">
             <br><br>
-      email:<br><input type="email" required>    <br><br>
-        mobile:<br><input type="number" required>    <br><br>
-        <input type="button" value="submit">
-    </fieldset>
+
+            password:<br><input type="password" name="pass">
+            <br><br>
+            email:<br><input type="emailid" name="mail"> <br><br>
+            mobile:<br><input type="number" name="mob"> <br><br>
+            <input type="button" value="submit" id="button">
+        </fieldset>
     </form>
+    <script>
+        $(document).ready(function () {
+            $("#form").validate({
+                rules: {
+                    'uname': {
+                        required: true,
+                        minlength: 2
+                        // pattern: /^[A-Za-z]/
+                    },
+                    'pass': {
+                        required: true,
+                        // pattern: /^(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"/
+
+                    },
+                    'mail': {
+                        required: true,
+                        email: true
+
+                    },
+                    'mob': {
+                        required: true,
+
+                    },
+
+
+                },
+                messages: {
+                    'uname': "Please enter a valid First Name.",
+                    'pass': "Please enter a valid Last Name.",
+                    'mail': "Please enter Email in proper format.",
+                    'mob': "Please enter a Password",
+                }
+            });
+
+        });
+
+
+    </script>
 
 </body>
+
 </html>
